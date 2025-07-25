@@ -9,7 +9,7 @@ set "CLIENT_TOOLS_DIR=%WORKSPACE_ROOT%tools\client"
 set "SCRIPT_SERVER_1=%BIN_DIR%\start_adb.ps1"
 set "SCRIPT_SERVER_2=%BIN_DIR%\start_avds.ps1"
 set "SCRIPT_CLIENT_1=%CLIENT_TOOLS_DIR%\configure_client.cmd"
-set "SCRIPT_CLIENT_2=%CLIENT_TOOLS_DIR%\allocate_ports.cmd"
+set "SCRIPT_CLIENT_2=%CLIENT_TOOLS_DIR%\start_session.cmd"
 set "SCRIPT_CLIENT_3=%CLIENT_TOOLS_DIR%\remote_scrcpy.cmd"
 set "SCRIPT_CLIENT_4=%CLIENT_TOOLS_DIR%\remote_flutter_run.cmd"
 
@@ -95,9 +95,9 @@ echo           Client Operations
 echo ================================================
 echo.
 echo   1. (Step 1 - Run Once) Configure Client for Remote ADB
-echo   2. (Step 2 - Run Per Session) Allocate Network Ports
+echo   2. (Step 2 - Run ONCE per Windows session) Start Remote Session
 echo   3. (Step 3) Run Remote Scrcpy
-echo   4. (Step 4) Run Remote Flutter
+echo   4. (Step 4 - Manual) Run Remote Flutter via command line
 echo.
 echo   5. Back to Main Menu
 echo ------------------------------------------------
@@ -119,7 +119,7 @@ if "%client_choice%"=="1" (
     goto client_menu
 )
 if "%client_choice%"=="2" (
-    echo Running: Allocate Network Ports...
+    echo Running: Start Remote Session...
     call "%SCRIPT_CLIENT_2%"
     pause
     goto client_menu
