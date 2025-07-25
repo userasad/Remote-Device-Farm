@@ -1,0 +1,11 @@
+# Log files
+logs/
+
+# Environment files - these are generated locally and should not be committed
+*.env
+
+# Windows thumbnail cache
+Thumbs.db
+
+# Temporary files created by the scripts
+*.txt
